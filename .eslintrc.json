@@ -1,0 +1,90 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "plugin:@angular-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates"
+      ],
+      "plugins": [
+        "deprecation"
+      ],
+      "rules": {
+        "@angular-eslint/directive-selector": [
+          "error",
+          {
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
+          }
+        ],
+        "@angular-eslint/component-selector": [
+          "error",
+          {
+            "type": "element",
+            "prefix": "app",
+            "style": "kebab-case"
+          }
+        ],
+        "deprecation/deprecation": "warn",
+        "no-shadow": "off",
+        "quotes": [
+          "error",
+          "single"
+        ],
+        "max-len": [
+          "error",
+          {
+            "code": 121
+          }
+        ],
+        "comma-dangle": [
+          "error",
+          "always-multiline"
+        ],
+        "semi": [
+          "error",
+          "always"
+        ],
+        "object-curly-spacing": [
+          "error",
+          "always",
+          {
+            "objectsInObjects": true
+          }
+        ],
+        "indent": [
+          "error",
+          2,
+          {
+            "SwitchCase": 1
+          }
+        ],
+        "no-duplicate-imports": [
+          "error"
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended"
+      ],
+      "rules": {}
+    }
+  ]
+}
